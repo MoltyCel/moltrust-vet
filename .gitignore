@@ -1,0 +1,4 @@
+# Never: the Ed25519 signing key for this skill identity lives on the server
+# at ~/.moltrust-vet-key.json, 0600, and has no business in a public repo.
+*-key.json
+.env

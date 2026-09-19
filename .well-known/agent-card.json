@@ -1,0 +1,24 @@
+{
+  "protocolVersion": "0.3.0",
+  "name": "moltrust-vet",
+  "description": "Audits an agent skill against ten versioned, CWE-mapped security checks and reports a verdict any party can recompute.",
+  "url": "https://api.moltrust.ch/guard",
+  "version": "1.0.0",
+  "provider": {
+    "organization": "CryptoKRI GmbH",
+    "url": "https://moltrust.ch"
+  },
+  "documentationUrl": "https://moltrust.ch/skills.html",
+  "capabilities": { "streaming": false, "pushNotifications": false },
+  "defaultInputModes": ["text/plain"],
+  "defaultOutputModes": ["application/json"],
+  "skills": [
+    {
+      "id": "vet",
+      "name": "Vet a skill",
+      "description": "Fetch a skill's SKILL.md and return its audit score, findings, canonical hash and auditor version.",
+      "tags": ["security", "audit", "skills", "supply-chain"],
+      "examples": ["vet https://github.com/someone/their-skill", "vet someone/their-skill"]
+    }
+  ]
+}
