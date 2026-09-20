@@ -2,7 +2,7 @@
 name: moltrust-vet
 version: 1.0.0
 description: Check any agent skill against ten versioned, CWE-mapped security checks before you install it, and get a verdict a third party can recompute.
-license: Apache-2.0
+license: MIT-0
 author: did:moltrust:157224190be24072
 homepage: https://moltrust.ch/skills.html
 ---
