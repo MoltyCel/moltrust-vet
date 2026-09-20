@@ -1,0 +1,25 @@
+name: skill layout
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# Two registries want the file in two places, so it exists twice. This is the
+# only thing keeping the copies honest: ClawHub reads SKILL.md at the root,
+# skills.sh indexes repos laid out as skills/<name>/SKILL.md. Neither will tell
+# us if they drift — a stale copy just quietly describes an older skill.
+jobs:
+  copies-match:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: root and skills/ copies are identical
+        run: |
+          set -euo pipefail
+          name=$(basename "$GITHUB_REPOSITORY")
+          if ! diff -u "SKILL.md" "skills/$name/SKILL.md"; then
+            echo "::error::SKILL.md and skills/$name/SKILL.md differ. Copy the root file over, or delete the duplicate."
+            exit 1
+          fi
+          echo "identical"
