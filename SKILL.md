@@ -1,10 +1,19 @@
 ---
 name: moltrust-vet
 version: 1.0.0
-description: Check any agent skill against ten versioned, CWE-mapped security checks before you install it, and get a verdict a third party can recompute.
+description: "Skill audit and security vetting before you install. Ten versioned, CWE-mapped checks scan a SKILL.md or MCP server for prompt injection, supply chain risk, secrets and unsafe network calls, and anyone can verify the verdict by recomputing it."
 license: MIT-0
 author: did:moltrust:157224190be24072
 homepage: https://moltrust.ch/skills.html
+metadata:
+  hermes:
+    category: security
+    tags:
+      - security
+      - compliance
+      - audit
+      - privacy
+      - auth
 ---
 
 # moltrust-vet
